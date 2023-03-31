@@ -46,16 +46,14 @@ class BoundingBox {
      * @param {BoundingBox} box
      * @returns {boolean}
      * @description Checks if a bounding box collides with this box
+     * @
      */
     collides(box) {
-        
-        return (
-            this.positionLow.x <= box.positionHigh.x &&
-            this.positionHigh.x >= box.positionLow.x &&
-            this.positionLow.y <= box.positionHigh.y &&
-            this.positionHigh.y >= box.positionLow.y &&
-            this.positionLow.z <= box.positionHigh.z &&
-            this.positionHigh.z >= box.positionLow.z
-        )
+        a = this.positionLow.subtract(box.positionHigh)
+        b = box.positionLow.subtract(this.positionHigh)
+
+        return a.x <= 0 && a.y <= 0 && a.z <= 0 && b.x <= 0 && b.y <= 0 && b.z <= 0
+
     }
+    
 }

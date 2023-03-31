@@ -5,6 +5,19 @@ class Position {
 		this.y = y
 		this.z = z
 	}
+	subtract(position) {
+		return new Position(this.x - position.x, this.y - position.y, this.z - position.z)
+	}
+	add(position) {
+		return new Position(this.x + position.x, this.y + position.y, this.z + position.z)
+	}
+	multiply(scalar) {
+		return new Position(this.x * scalar, this.y * scalar, this.z * scalar)
+	}
+	divide(scalar) {
+		return new Position(this.x / scalar, this.y / scalar, this.z / scalar)
+    }
+    
 }
 
 /**
