@@ -77,3 +77,5 @@ class BoundingBox {
 		return a.x <= 0 && a.y <= 0 && a.z <= 0 && b.x <= 0 && b.y <= 0 && b.z <= 0
 	}
 }
+
+module.exports = { BoundingBox }
